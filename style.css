@@ -1,0 +1,119 @@
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --brand: #0C41C4;   /* azul Musicala */
+  --brand2: #7c5cff;  /* morado Musicala */
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+/* Topbar */
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  background: linear-gradient(90deg, #fff, #f9f9ff);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 16px;
+}
+.brand {
+  display: flex; gap: 12px; align-items: center;
+  max-width: 980px; margin: 0 auto;
+}
+.logo {
+  height: 48px; width: 48px; object-fit: contain; border-radius: 12px;
+}
+.topbar h1 {
+  font-size: 1.5rem; line-height: 1.1;
+  margin: 0; color: var(--brand);
+}
+.topbar .muted { margin: 2px 0 0 0; font-size: .9rem; }
+.tag {
+  position: absolute; right: 16px; top: 16px;
+  background: linear-gradient(90deg, var(--brand), var(--brand2));
+  color: #fff; padding: 6px 10px; border-radius: 999px;
+  font-size: .85rem; font-weight: 700;
+}
+
+/* Layout */
+.wrap { max-width: 980px; margin: 22px auto; padding: 0 16px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+  padding: 22px;
+}
+h1,h2,h3 { margin: 0 0 8px; }
+.lead { color: var(--text); margin-top: 0; }
+
+/* Form */
+.form label { display: block; margin: 14px 0; }
+.form label span {
+  display: block; font-weight: 700; margin-bottom: 6px;
+}
+input, select, textarea {
+  width: 100%; padding: 12px 14px;
+  border: 1px solid var(--border); border-radius: 12px;
+  background: #fff; font: inherit;
+}
+textarea {
+  min-height: 140px; resize: vertical;
+}
+
+button {
+  margin-top: 10px;
+  background: linear-gradient(90deg, var(--brand), var(--brand2));
+  color: #fff; border: 0; border-radius: 12px;
+  padding: 12px 16px; font-weight: 800; cursor: pointer;
+  box-shadow: 0 6px 14px rgba(124,92,255,.25);
+  transition: transform .1s ease;
+}
+button:hover:not(:disabled) { transform: translateY(-1px); }
+button:disabled { opacity: .6; cursor: not-allowed; }
+
+.muted { color: var(--muted); font-size: .9rem; }
+.status { min-height: 20px; margin: 10px 0 0; }
+
+/* Tips list */
+.tips {
+  margin-top: 18px;
+  background: #fafaff;
+  border: 1px dashed #d9d7ff;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: .9rem;
+}
+.tips ul { margin: 8px 0 0 18px; padding: 0; }
+.tips li { margin: 4px 0; }
+
+/* Footer */
+.foot {
+  text-align: center;
+  color: var(--muted);
+  margin: 16px 0 24px;
+  font-size: .85rem;
+}
+
+/* Honeypot oculto */
+.hp {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .logo { height: 40px; width: 40px; }
+  .brand { padding-right: 86px; }
+  .topbar h1 { font-size: 1.2rem; }
+}

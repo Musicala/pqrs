@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PQRS · Musicala · Buzón Anónimo</title>
+  <meta name="description" content="Buzón anónimo para compartir preguntas, quejas, reclamos, sugerencias y felicitaciones sobre Musicala.">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="brand">
+      <img src="logo.png" alt="Logo Musicala" class="logo" />
+      <div>
+        <h1>Buzón Musicala · PQRS Anónimo</h1>
+        <p class="muted">Tu voz nos ayuda a mejorar. Gracias por contarnos cómo te fue en clases, sedes, atención y más.</p>
+      </div>
+    </div>
+    <span class="tag">Anónimo</span>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <p class="lead">
+        Este formulario es <strong>completamente anónimo</strong>. Solo registramos la <em>categoría</em>, el <em>área</em>, la <em>sede</em>, un <em>contexto</em> opcional, tu <em>comentario</em> y una <em>calificación general</em>.
+      </p>
+
+      <form id="pqrsForm" class="form" autocomplete="off" novalidate>
+        <!-- SEDE -->
+        <label>
+          <span>Sede</span>
+          <select name="sede" required>
+            <option value="" disabled selected>Selecciona la sede</option>
+            <option>Sede Pasadena</option>
+          </select>
+        </label>
+
+        <!-- ÁREA -->
+        <label>
+          <span>Área / Tema</span>
+          <select name="area" required>
+            <option value="" disabled selected>Selecciona el área</option>
+            <option>Música</option>
+            <option>Danza</option>
+            <option>Artes Plásticas</option>
+            <option>Teatro</option>
+            <option>Servicios y Atención</option>
+            <option>Instalaciones y equipos</option>
+            <option>Plataformas y Apps</option>
+            <option>Pagos / Matrículas</option>
+            <option>Otro</option>
+          </select>
+        </label>
+
+        <!-- CATEGORÍA (Tipo de mensaje) -->
+        <label>
+          <span>Tipo de mensaje</span>
+          <select name="categoria" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option>Pregunta</option>
+            <option>Queja</option>
+            <option>Reclamo</option>
+            <option>Sugerencia</option>
+            <option>Felicitación</option>
+            <option>Reporte</option>
+          </select>
+        </label>
+
+        <!-- CONTEXTO -->
+        <label>
+          <span>Contexto (opcional)</span>
+          <input name="contexto" type="text" placeholder="Ej.: Grupo Martes 4 pm, Docente Ana, clase de 10/09" />
+        </label>
+
+        <!-- COMENTARIO -->
+        <label>
+          <span>Tu comentario</span>
+          <textarea name="comentario" maxlength="1500" required
+            placeholder="Cuéntanos claramente qué ocurrió o qué te gustaría mejorar/agradecer. Mientras más específico, mejor."></textarea>
+        </label>
+
+        <!-- RATING -->
+        <label>
+          <span>Calificación general (1–5)</span>
+          <select name="rating">
+            <option value="" selected>Sin calificación</option>
+            <option value="1">1 — Muy mal</option>
+            <option value="2">2 — Regular</option>
+            <option value="3">3 — Bien</option>
+            <option value="4">4 — Muy bien</option>
+            <option value="5">5 — Excelente</option>
+          </select>
+        </label>
+
+        <!-- Honeypot antispam (oculto para personas) -->
+        <div class="hp">
+          <label>No llenar si eres humano</label>
+          <input name="website" autocomplete="off">
+        </div>
+
+        <button type="submit" id="sendBtn">Enviar</button>
+        <p id="msg" class="muted status"></p>
+      </form>
+
+      <div class="tips">
+        <strong>Ideas útiles para tu comentario:</strong>
+        <ul>
+          <li>Docencia (claridad, trato, organización, repertorio).</li>
+          <li>Logística (horarios, salones, equipos, sonido).</li>
+          <li>Plataformas (Classroom, guías, audios, backings).</li>
+          <li>Atención y comunicación.</li>
+          <li>Espacios de muestra, recitales y eventos.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="foot">
+      Musicala 2025 · Buzón PQRS Anónimo
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
